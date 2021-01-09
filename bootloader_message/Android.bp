@@ -16,6 +16,7 @@
 
 cc_defaults {
     name: "libbootloader_message_defaults",
+    defaults: ["bootloader_message_offset_defaults"],
     srcs: ["bootloader_message.cpp"],
     cflags: [
         "-Wall",
@@ -29,13 +30,6 @@ cc_defaults {
     ],
     export_include_dirs: ["include"],
 
-    product_variables: {
-        awaken: {
-            bootloader_message_offset : {
-                cflags: ["-DBOARD_RECOVERY_BLDRMSG_OFFSET=%d"],
-            },
-        },
-    },
 }
 
 cc_library {
